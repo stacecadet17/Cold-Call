@@ -10,16 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    let people = ["Leslie", "Ron", "Jerry", "Tom", "Donna", "Anne", "April", "Andy", "Ben", "Chris"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func changeName(_ sender: UIButton) {
+        
+        let personNumber = Int(arc4random_uniform(UInt32(people.count)))
+            nameLabel.text = people[personNumber]
     }
-
+    
 
 }
 
